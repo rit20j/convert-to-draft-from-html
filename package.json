@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "immutable": "^5.0.0-beta.5",
+    "invariant": "^2.2.4",
+    "jsdom": "^24.0.0",
+    "nullthrows": "^1.1.1",
+    "uuid": "^9.0.1"
+  },
+  "name": "htmltodraft",
+  "version": "1.0.0",
+  "description": "for test",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
