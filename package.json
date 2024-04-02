@@ -6,9 +6,9 @@
     "nullthrows": "^1.1.1",
     "uuid": "^9.0.1"
   },
-  "name": "htmltodraft",
+  "name": "html-to-draft-react-native",
   "version": "1.0.0",
-  "description": "for test",
+  "description": "convert html to draft js ",
   "main": "index.js",
   "type": "module",
   "scripts": {
