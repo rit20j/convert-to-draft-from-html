@@ -8,4 +8,4 @@ const DraftStringKey = {
 	},
   };
   
-  export default DraftStringKey;
+  module.exports = DraftStringKey;

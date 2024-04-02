@@ -1,4 +1,4 @@
-import Immutable from 'immutable';
+const Immutable = require('immutable');
 
 const { OrderedMap } = Immutable;
 
@@ -8,4 +8,4 @@ const BlockMapBuilder = {
   },
 };
 
-export default BlockMapBuilder;
+module.exports = BlockMapBuilder;

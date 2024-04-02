@@ -1,4 +1,4 @@
-import DraftStringKey from './DraftStringKey.js';
+const DraftStringKey = require('./DraftStringKey.js');
 // import UnicodeUtils from "UnicodeUtils"
 // const { strlen } = UnicodeUtils;
 
@@ -23,4 +23,4 @@ function encodeEntityRanges(block, storageMap) {
   return encoded;
 }
 
-export default encodeEntityRanges;
+module.exports = encodeEntityRanges;

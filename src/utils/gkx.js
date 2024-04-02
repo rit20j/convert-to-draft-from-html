@@ -5,6 +5,6 @@
 	return false;
   };
 
-  export default gkx
+  module.exports = gkx
 
   

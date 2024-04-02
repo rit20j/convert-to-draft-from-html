@@ -1,6 +1,6 @@
 // const { List } = require('immutable');
 
-import Immutable from 'immutable';
+const Immutable = require('immutable');
 const { List, Map, OrderedSet, Record, Repeat } = Immutable;
 /**
  * Search through an array to find contiguous stretches of elements that
@@ -33,5 +33,5 @@ function findRangesImmutable(
   filterFn(haystack.last()) && foundFn(cursor, haystack.count());
 }
 
-export default findRangesImmutable
+module.exports = findRangesImmutable
 // module.exports = findRangesImmutable;

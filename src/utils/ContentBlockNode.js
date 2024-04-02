@@ -1,7 +1,7 @@
 
-import CharacterMetadata from './CharacterMetadata.js';
-import findRangesImmutable from './findRangesImmutable.js';
-import Immutable from 'immutable';
+const CharacterMetadata = require('./CharacterMetadata.js');
+const findRangesImmutable = require('./findRangesImmutable.js');
+const Immutable = require('immutable');
 
 const { List, Map, OrderedSet, Record, Repeat } = Immutable;
 
@@ -116,4 +116,4 @@ class ContentBlockNode extends (Record(defaultRecord)) {
   }
 }
 
-export default ContentBlockNode;
+module.exports = ContentBlockNode;

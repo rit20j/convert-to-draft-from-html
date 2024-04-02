@@ -1,6 +1,6 @@
-import UnicodeBidi from "./UnicodeBidi.js"
-import UnicodeBidiDirection from "./UnicodeBidiDirection.js"
-import invariant from "invariant"
+const UnicodeBidi = require("./UnicodeBidi.js");
+const UnicodeBidiDirection = require("./UnicodeBidiDirection.js");
+const invariant = require("invariant");
 
 
 // Remove import statement, type definitions not directly supported in JS
@@ -53,4 +53,4 @@ class UnicodeBidiService {
 
 }
 
-export default UnicodeBidiService
+module.exports = UnicodeBidiService

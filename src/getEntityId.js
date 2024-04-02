@@ -1,5 +1,5 @@
 // import { DraftEntity } from './utils/index.js';
-import DraftEntity from "./utils/DraftEntity.js";
+const DraftEntity = require("./utils/DraftEntity.js");
 
 // const DraftEntity  = require('./utils/DraftEntity.js')
 
@@ -32,4 +32,4 @@ const getEntityId = (node) => {
   return entityId;
 }
 
-export default getEntityId;
+module.exports = getEntityId;

@@ -1,7 +1,7 @@
 
 // Object.defineProperty(exports, "__esModule", { value: true });
-import UnicodeBidiDirection from "./UnicodeBidiDirection.js"
-import invariant from "invariant"
+const UnicodeBidiDirection = require("./UnicodeBidiDirection.js");
+const invariant = require("invariant");
 /**
  * RegExp ranges of characters with a *Strong* Bidi_Class value.
  *
@@ -242,4 +242,4 @@ var UnicodeBidi = {
     isDirectionLTR: isDirectionLTR,
     isDirectionRTL: isDirectionRTL,
 };
-export default UnicodeBidi;
+module.exports = UnicodeBidi;

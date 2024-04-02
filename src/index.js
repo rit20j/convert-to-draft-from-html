@@ -1,27 +1,29 @@
 // const { CharacterMetadata, ContentBlock, generateRandomKey,  DraftEntity } = require('./utils')
-import CharacterMetadata from './utils/CharacterMetadata.js';
-import ContentBlock from './utils/ContentBlock.js';
-import generateRandomKey from './utils/generateRandomKey.js';
-import DraftEntity from './utils/DraftEntity.js';
-import { Map, List, OrderedMap, OrderedSet } from 'immutable';
-import getSafeBodyFromHTML from './getSafeBodyFromHTML.js';
-import {
-  createTextChunk,
-  getSoftNewlineChunk,
-  getEmptyChunk,
-  getBlockDividerChunk,
-  getFirstBlockChunk,
-  getAtomicBlockChunk,
-  joinChunks,
-} from './chunkBuilder.js';
-import getBlockTypeForTag from './getBlockTypeForTag.js';
-import processInlineTag from './processInlineTag.js';
-import getBlockData from './getBlockData.js';
-import getEntityId from './getEntityId.js';
-import convertFromDraftStateToRaw from './convertfromstatetoRaw.js';
-import ContentState from "./immutable/ContentState.js"
-import EditorState from './EditorState.js'
-import convertToRaw from './convertToRaw.js'
+const CharacterMetadata = require('./utils/CharacterMetadata.js');
+const ContentBlock = require('./utils/ContentBlock.js');
+const generateRandomKey = require('./utils/generateRandomKey.js');
+const DraftEntity = require('./utils/DraftEntity.js');
+const Map = require('immutable').Map;
+const List = require('immutable').List;
+const OrderedMap = require('immutable').OrderedMap;
+const OrderedSet = require('immutable').OrderedSet;
+const getSafeBodyFromHTML = require('./getSafeBodyFromHTML.js');
+const createTextChunk = require('./chunkBuilder.js').createTextChunk;
+const getSoftNewlineChunk = require('./chunkBuilder.js').getSoftNewlineChunk;
+const getEmptyChunk = require('./chunkBuilder.js').getEmptyChunk;
+const getBlockDividerChunk = require('./chunkBuilder.js').getBlockDividerChunk;
+const getFirstBlockChunk = require('./chunkBuilder.js').getFirstBlockChunk;
+const getAtomicBlockChunk = require('./chunkBuilder.js').getAtomicBlockChunk;
+const joinChunks = require('./chunkBuilder.js').joinChunks;
+
+const getBlockTypeForTag = require('./getBlockTypeForTag.js');
+const processInlineTag = require('./processInlineTag.js');
+const getBlockData = require('./getBlockData.js');
+const getEntityId = require('./getEntityId.js');
+const convertFromDraftStateToRaw = require('./convertfromstatetoRaw.js');
+const ContentState = require("./immutable/ContentState.js");
+const EditorState = require('./EditorState.js');
+const convertToRaw = require('./convertToRaw.js');
 
 const SPACE = ' ';
 const REGEX_NBSP = new RegExp('&nbsp;', 'g');
@@ -219,7 +221,7 @@ function htmlToDraft(html, customChunkGenerator) {
 }
 
 
-export default function htmlToRawContent(html){
+module.exports = function htmlToRawContent(html){
   let blocksFromHTML = htmlToDraft(html)
   const state = ContentState.createFromBlockArray(
     blocksFromHTML.contentBlocks,
@@ -235,7 +237,6 @@ export default function htmlToRawContent(html){
   
   return JSON.stringify(convertToRaw(content))
 }
-
 
 
 

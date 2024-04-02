@@ -2,9 +2,9 @@
 // const findRangesImmutable = require('./findRangesImmutable');
 // const Immutable = require('immutable');
 
-import CharacterMetadata from './CharacterMetadata.js';
-import findRangesImmutable from './findRangesImmutable.js';
-import Immutable from 'immutable';
+const CharacterMetadata = require('./CharacterMetadata.js');
+const findRangesImmutable = require('./findRangesImmutable.js');
+const Immutable = require('immutable');
 const { List, Map, OrderedSet, Record, Repeat } = Immutable;
 
 const EMPTY_SET = OrderedSet();
@@ -104,5 +104,5 @@ function haveEqualEntity(charA, charB) {
   return charA.getEntity() === charB.getEntity();
 }
 
-export default ContentBlock
+module.exports = ContentBlock
 // module.exports = ContentBlock;

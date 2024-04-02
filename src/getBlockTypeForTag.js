@@ -1,4 +1,4 @@
-import { Map } from 'immutable';
+const Map = require('immutable').Map;
 
 const blockRenderMap = new Map({
   'header-one': {
@@ -42,7 +42,7 @@ const blockRenderMap = new Map({
   },
 });
 
-export default function getBlockTypeForTag(
+module.exports = function getBlockTypeForTag(
   tag,
   lastList
 ) {

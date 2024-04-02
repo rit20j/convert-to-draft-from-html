@@ -1,8 +1,8 @@
 // const DraftEntityInstance = require('./DraftEntityInstance.js');
-import DraftEntityInstance from './DraftEntityInstance.js';
-import Immutable from 'immutable';
-import invariant from 'invariant';
-import { v4 as uuidv4 } from 'uuid';
+const DraftEntityInstance = require('./DraftEntityInstance.js');
+const Immutable = require('immutable');
+const invariant = require('invariant');
+const uuidv4 = require('uuid').v4;
 // const Immutable = require('immutable');
 // const invariant = require('invariant');
 // const uuid = require('uuid');
@@ -73,5 +73,5 @@ const DraftEntity = {
   },
 };
 
-export default DraftEntity
+module.exports = DraftEntity
 // module.exports = DraftEntity;

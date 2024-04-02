@@ -8,13 +8,13 @@
   },
   
   "name": "html-to-draft-react-native",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "convert html to draft js ",
   "main": "src/index.js",
   "files": [
       "src/**/*"
   ],
-  "type": "module",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
