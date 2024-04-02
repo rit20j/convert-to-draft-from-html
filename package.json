@@ -2,13 +2,13 @@
   "dependencies": {
     "immutable": "^5.0.0-beta.5",
     "invariant": "^2.2.4",
-    "jsdom": "^24.0.0",
+    "jsdom": "17.0.0",
     "nullthrows": "^1.1.1",
     "uuid": "^9.0.1"
   },
   
   "name": "html-to-draft-react-native",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "convert html to draft js ",
   "main": "src/index.js",
   "files": [
