@@ -8,7 +8,7 @@
   },
   
   "name": "convert-to-draft-from-html",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "To convert HTML to Draft.js, you can utilize the htmlToRawContent function provided by the convert-to-draft-from-html library. Simply import htmlToRawContent and pass an HTML string as an argument ",
   "main": "src/index.js",
   "files": [
