@@ -1,6 +1,6 @@
-import UnicodeBidiService from "./UnicodeBidiService.js"
-import Immutable from 'immutable';
-import nullthrows from 'nullthrows';
+const UnicodeBidiService = require("./UnicodeBidiService.js");
+const Immutable = require('immutable');
+const nullthrows = require('nullthrows');
 
 const { OrderedMap } = Immutable;
 
@@ -26,4 +26,4 @@ const EditorBidiService = {
   },
 };
 
-export default EditorBidiService;
+module.exports = EditorBidiService;

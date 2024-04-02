@@ -10,4 +10,4 @@ function generateRandomKey(){
   return key;
 }
 
-export default generateRandomKey;
+module.exports = generateRandomKey;

@@ -1,6 +1,6 @@
-import Immutable from 'immutable';
-import findRangesImmutable from "../utils/findRangesImmutable.js"
-import getOwnObjectValues from "../utils/getOwnObjectValues.js"
+const Immutable = require('immutable');
+const findRangesImmutable = require("../utils/findRangesImmutable.js");
+const getOwnObjectValues = require("../utils/getOwnObjectValues.js");
 
 const { List, Repeat, Record } = Immutable;
 
@@ -90,4 +90,4 @@ function areEqual(a, b) {
   return a === b;
 }
 
-export default BlockTree;
+module.exports = BlockTree;

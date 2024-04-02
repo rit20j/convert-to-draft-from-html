@@ -12,18 +12,17 @@
 
 // const sanitizeDraftText = require('../utils/sanitizeDraftText.js');
 
-import Immutable from 'immutable';
-import BlockMapBuilder from './BlockMapBuilder.js';
-import CharacterMetadata from "../utils/CharacterMetadata.js"
-import ContentBlockNode from "../utils/ContentBlockNode.js"
-import DraftEntity from "../utils/DraftEntity.js"
-import ContentBlock from "../utils/ContentBlock.js"
-// import { CharacterMetadata, ContentBlock, ContentBlockNode, DraftEntity } from '../utils';
-import SelectionState from './SelectionState.js';
-import generateRandomKey from '../utils/generateRandomKey.js';
-import getOwnObjectValues from '../utils/getOwnObjectValues.js';
-import gkx from '../utils/gkx.js';
-import sanitizeDraftText from '../utils/sanitizeDraftText.js';
+const Immutable = require('immutable');
+const BlockMapBuilder = require('./BlockMapBuilder.js');
+const CharacterMetadata = require("../utils/CharacterMetadata.js");
+const ContentBlockNode = require("../utils/ContentBlockNode.js");
+const DraftEntity = require("../utils/DraftEntity.js");
+const ContentBlock = require("../utils/ContentBlock.js");
+const SelectionState = require('./SelectionState.js');
+const generateRandomKey = require('../utils/generateRandomKey.js');
+const getOwnObjectValues = require('../utils/getOwnObjectValues.js');
+const gkx = require('../utils/gkx.js');
+const sanitizeDraftText = require('../utils/sanitizeDraftText.js');
 
 
 const { List, Record, Repeat, Map: ImmutableMap, OrderedMap } = Immutable;
@@ -232,4 +231,4 @@ class ContentState extends Record(defaultRecord) {
   }
 }
 
-export default  ContentState;
+module.exports =  ContentState;

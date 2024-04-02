@@ -1,4 +1,4 @@
-import invariant from "invariant"
+const invariant = require("invariant");
 
 // exports.BidiDirection = 'LTR' | 'RTL' | 'NEUTRAL';
 // exports.HTMLDir = 'ltr' | 'rtl';
@@ -92,4 +92,4 @@ const UnicodeBidiDirection = {
   getGlobalDir,
 };
 
-export default UnicodeBidiDirection;
+module.exports = UnicodeBidiDirection;

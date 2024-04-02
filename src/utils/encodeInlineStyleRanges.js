@@ -1,6 +1,6 @@
 // const UnicodeUtils = require('UnicodeUtils');
 // const findRangesImmutable = require('./findRangesImmutable');
-import findRangesImmutable from './findRangesImmutable.js';
+const findRangesImmutable = require('./findRangesImmutable.js');
 const areEqual = (a, b) => a === b;
 const isTruthy = a => !!a;
 const EMPTY_ARRAY = [];
@@ -53,4 +53,4 @@ function encodeInlineStyleRanges(block) {
   return Array.prototype.concat.apply(EMPTY_ARRAY, ranges.toJS());
 }
 
-export default encodeInlineStyleRanges;
+module.exports = encodeInlineStyleRanges;

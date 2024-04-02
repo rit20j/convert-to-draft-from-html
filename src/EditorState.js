@@ -9,11 +9,11 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import Immutable from 'immutable';
-import SelectionState from './immutable/SelectionState.js';
-import BlockTree from './immutable/BlockTree.js';
-import ContentState from './immutable/ContentState.js';
-import EditorBidiService from './immutable/EditorBidiService.js';
+const Immutable = require('immutable');
+const SelectionState = require('./immutable/SelectionState.js');
+const BlockTree = require('./immutable/BlockTree.js');
+const ContentState = require('./immutable/ContentState.js');
+const EditorBidiService = require('./immutable/EditorBidiService.js');
 
 
 var OrderedSet = Immutable.OrderedSet, Record = Immutable.Record, Stack = Immutable.Stack, OrderedMap = Immutable.OrderedMap, List = Immutable.List;
@@ -390,4 +390,4 @@ function lookUpwardForInlineStyle(content, fromKey) {
     return OrderedSet();
 }
 
-export default EditorState;
+module.exports = EditorState;

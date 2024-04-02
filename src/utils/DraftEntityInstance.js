@@ -1,4 +1,4 @@
-import Immutable from 'immutable';
+const Immutable = require('immutable');
 
 const {Record} = Immutable;
 
@@ -22,6 +22,6 @@ class DraftEntityInstance extends DraftEntityInstanceRecord {
     return this.get('data');
   }
 }
-export default DraftEntityInstance
+module.exports = DraftEntityInstance
 
 // module.exports = DraftEntityInstance;

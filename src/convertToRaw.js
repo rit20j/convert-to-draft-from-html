@@ -1,9 +1,9 @@
-import ContentBlock from './utils/ContentBlock.js'
-import ContentBlockNode from './utils/ContentBlockNode.js'
-import DraftStringKey from './utils/DraftStringKey.js'
-import encodeEntityRanges from './utils/encodeEntityRanges.js'
-import encodeInlineStyleRanges from './utils/encodeInlineStyleRanges.js'
-import invariant from "invariant"
+const ContentBlock = require('./utils/ContentBlock.js');
+const ContentBlockNode = require('./utils/ContentBlockNode.js');
+const DraftStringKey = require('./utils/DraftStringKey.js');
+const encodeEntityRanges = require('./utils/encodeEntityRanges.js');
+const encodeInlineStyleRanges = require('./utils/encodeInlineStyleRanges.js');
+const invariant = require("invariant");
 
 
 const createRawBlock = (block, entityStorageMap) => {
@@ -106,4 +106,4 @@ const convertToRaw = contentState => {
 };
 
 // export default convertFromDraftStateToRaw;
-export default convertToRaw;
+module.exports = convertToRaw;

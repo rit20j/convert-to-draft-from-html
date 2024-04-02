@@ -1,6 +1,6 @@
-import { Map } from 'immutable';
+const Map = require('immutable').Map;
 
-export default function getBlockData(
+module.exports = function getBlockData(
   node
 ) {
   if (node.style.textAlign) {

@@ -1,4 +1,4 @@
-import Immutable from 'immutable';
+const Immutable = require('immutable');
 
 const { Record } = Immutable;
 
@@ -120,4 +120,4 @@ class SelectionState extends SelectionStateRecord {
   }
 }
 
-export default SelectionState;
+module.exports = SelectionState;

@@ -1,13 +1,10 @@
 
 // const jsdom = require("jsdom");
 
-import jsdom from "jsdom";
+const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const { document } = (new JSDOM('')).window;
 
-const dom = new JSDOM(`<body>
-  <div id="content">test data</div>
-</body>`);
 
 
 const getSafeBodyFromHTML = (html) => {
@@ -27,4 +24,4 @@ const getSafeBodyFromHTML = (html) => {
   return root;
 }
 
-export default getSafeBodyFromHTML;
+module.exports = getSafeBodyFromHTML;

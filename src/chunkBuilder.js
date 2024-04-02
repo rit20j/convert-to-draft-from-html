@@ -1,9 +1,10 @@
-import { OrderedSet, Map } from 'immutable';
+const OrderedSet = require('immutable').OrderedSet;
+const Map = require('immutable').Map;
 
 const SPACE = ' ';
 const MAX_DEPTH = 4;
 
-export const getWhitespaceChunk = (entityId) => {
+exports.getWhitespaceChunk = (entityId) => {
   return {
     text: SPACE,
     inlines: [new OrderedSet()],
@@ -12,7 +13,7 @@ export const getWhitespaceChunk = (entityId) => {
   };
 };
 
-export const createTextChunk = (node, inlineStyle, entityId) => {
+exports.createTextChunk = (node, inlineStyle, entityId) => {
   const text = node.textContent;
   if (text.trim() === '') {
     return { chunk: getWhitespaceChunk(entityId) };
@@ -27,7 +28,7 @@ export const createTextChunk = (node, inlineStyle, entityId) => {
   };
 };
 
-export const getSoftNewlineChunk = () => {
+exports.getSoftNewlineChunk = () => {
   return {
     text: '\n',
     inlines: [new OrderedSet()],
@@ -36,7 +37,7 @@ export const getSoftNewlineChunk = () => {
   };
 };
 
-export const getEmptyChunk = () => {
+exports.getEmptyChunk = () => {
   return {
     text: '',
     inlines: [],
@@ -45,7 +46,7 @@ export const getEmptyChunk = () => {
   };
 };
 
-export const getFirstBlockChunk = (blockType, data) => {
+exports.getFirstBlockChunk = (blockType, data) => {
   return {
     text: '',
     inlines: [],
@@ -58,7 +59,7 @@ export const getFirstBlockChunk = (blockType, data) => {
   };
 };
 
-export const getBlockDividerChunk = (blockType, depth, data) => {
+exports.getBlockDividerChunk = (blockType, depth, data) => {
   return {
     text: '\r',
     inlines: [],
@@ -71,7 +72,7 @@ export const getBlockDividerChunk = (blockType, depth, data) => {
   };
 };
 
-export const getAtomicBlockChunk = (entityId) => {
+exports.getAtomicBlockChunk = (entityId) => {
   return {
     text: '\r ',
     inlines: [new OrderedSet()],
@@ -84,7 +85,7 @@ export const getAtomicBlockChunk = (entityId) => {
   };
 };
 
-export const joinChunks = (A, B) => {
+exports.joinChunks = (A, B) => {
   return {
     text: A.text + B.text,
     inlines: A.inlines.concat(B.inlines),

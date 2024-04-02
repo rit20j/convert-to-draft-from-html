@@ -1,6 +1,8 @@
 // const { Map, OrderedSet, Record } = require('immutable');
 
-import {Map, OrderedSet, Record} from "immutable"
+const Map = require("immutable").Map;
+const OrderedSet = require("immutable").OrderedSet;
+const Record = require("immutable").Record;
 // Immutable.map is typed such that the value for every key in the map
 // must be the same type
 let EMPTY_SET = OrderedSet();
@@ -85,5 +87,5 @@ let pool = Map([[Map(defaultRecord), EMPTY]]);
 
 CharacterMetadata.EMPTY = EMPTY;
 
-export default CharacterMetadata
+module.exports = CharacterMetadata
 // module.exports = CharacterMetadata;

@@ -8,7 +8,7 @@ const inlineTags = {
   sup: 'SUPERSCRIPT',
 };
 
-export default function processInlineTag(
+module.exports = function processInlineTag(
   tag,
   node,
   currentStyle
