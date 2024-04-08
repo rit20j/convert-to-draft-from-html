@@ -1,5 +1,8 @@
 // const UnicodeUtils = require('UnicodeUtils');
 // const findRangesImmutable = require('./findRangesImmutable');
+const UnicodeUtils = require("../immutable/UnicodeUtils.js")
+const { strlen } = UnicodeUtils;
+
 const findRangesImmutable = require('./findRangesImmutable.js');
 const areEqual = (a, b) => a === b;
 const isTruthy = a => !!a;
@@ -25,8 +28,8 @@ function getEncodedInlinesForType(block, styleList, styleToEncode) {
     (start, end) => {
       const text = block.getText();
       ranges.push({
-        offset: text.slice(0, start).length,
-        length: text.slice(start, end).length,
+        offset: strlen(text.slice(0, start).length),
+        length: strlen(text.slice(start, end).length),
         style: styleToEncode,
       });
     },

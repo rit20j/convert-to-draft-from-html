@@ -3,8 +3,9 @@ const DraftEntityInstance = require('./DraftEntityInstance.js');
 const Immutable = require('immutable');
 const invariant = require('invariant');
 const uuidv4 = require('uuid').v4;
-// const Immutable = require('immutable');
-// const invariant = require('invariant');
+
+
+
 // const uuid = require('uuid');
 
 const { OrderedMap } = Immutable;
@@ -26,9 +27,10 @@ const DraftEntity = {
     return instanceKey;
   },
 
-  __create(type, mutability, data) {
+  __create(type, mutability, data = {}) {
+    console.log('create----------', type, "-------------",mutability, data)
     return DraftEntity.__add(
-      new DraftEntityInstance({ type, mutability, data: data || {} })
+      new DraftEntityInstance({ type, mutability, data: data }),
     );
   },
 
@@ -73,5 +75,4 @@ const DraftEntity = {
   },
 };
 
-module.exports = DraftEntity
-// module.exports = DraftEntity;
+module.exports = DraftEntity;

@@ -15,12 +15,12 @@ const getBlockDividerChunk = require('./chunkBuilder.js').getBlockDividerChunk;
 const getFirstBlockChunk = require('./chunkBuilder.js').getFirstBlockChunk;
 const getAtomicBlockChunk = require('./chunkBuilder.js').getAtomicBlockChunk;
 const joinChunks = require('./chunkBuilder.js').joinChunks;
+const convertFromHTMLToContentBlocks = require('./convertFromHTMLToContentBlocks.js') // draft.js
 
 const getBlockTypeForTag = require('./getBlockTypeForTag.js');
 const processInlineTag = require('./processInlineTag.js');
 const getBlockData = require('./getBlockData.js');
 const getEntityId = require('./getEntityId.js');
-const convertFromDraftStateToRaw = require('./convertfromstatetoRaw.js');
 const ContentState = require("./immutable/ContentState.js");
 const EditorState = require('./EditorState.js');
 const convertToRaw = require('./convertToRaw.js');
@@ -38,12 +38,12 @@ function genFragment(
   inEntity,
   customChunkGenerator
 ) {
-  console.log("node",node)
   const nodeName = node.nodeName.toLowerCase();
 
   if (customChunkGenerator) {
     const value = customChunkGenerator(nodeName, node);
     if (value) {
+   
       const entityId = DraftEntity.__create(
         value.type,
         value.mutability,
@@ -118,7 +118,6 @@ function genFragment(
   }
 
   const blockType = getBlockTypeForTag(nodeName, lastList);
-
   let chunk;
   if (blockType) {
     if (nodeName === 'ul' || nodeName === 'ol') {
@@ -161,6 +160,7 @@ function genFragment(
     const sibling = child.nextSibling;
     child = sibling;
   }
+
   return { chunk };
 }
 
@@ -170,18 +170,22 @@ function getChunkForHTML(html, customChunkGenerator) {
   if (!safeBody) {
     return null;
   }
-  console.log("safeBody",safeBody.nodeName)
   firstBlock = true;
   const { chunk } = genFragment(safeBody, new OrderedSet(), -1, '', undefined, customChunkGenerator);
   return { chunk };
 }
 
 function htmlToDraft(html, customChunkGenerator) {
+
   const chunkData = getChunkForHTML(html, customChunkGenerator);
   if (chunkData) {
     const { chunk } = chunkData;
+
+    console.log('chunkData-----221----', JSON.stringify(chunk))
     let entityMap = new OrderedMap({});
+  
     chunk.entities && chunk.entities.forEach(entity => {
+
       if (entity) {
         entityMap = entityMap.set(entity, DraftEntity.__get(entity));
       }
@@ -221,7 +225,8 @@ function htmlToDraft(html, customChunkGenerator) {
 }
 
 
-module.exports = function htmlToRawContent(html){
+ function htmlToRawContent(html){
+  // let blocksFromHTML = convertFromHTMLToContentBlocks(html)
   let blocksFromHTML = htmlToDraft(html)
   const state = ContentState.createFromBlockArray(
     blocksFromHTML.contentBlocks,
@@ -237,6 +242,11 @@ module.exports = function htmlToRawContent(html){
   
   return JSON.stringify(convertToRaw(content))
 }
+
+
+console.log(htmlToRawContent('<div><a href=\"https://www.w3schools.com/\" style=\"-webkit-tap-highlight-color: rgba(26, 26, 26, 0.3); -webkit-text-size-adjust: auto; font-family: Times; font-size: medium; font-variant-ligatures: normal; orphans: 2; widows: 2;\">Visit W3Schools.com!</a></div>'))
+
+
 
 
 

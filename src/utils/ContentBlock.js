@@ -87,6 +87,7 @@ class ContentBlock extends ContentBlockRecord {
   }
 
   findEntityRanges(filterFn, callback) {
+    console.log('entityRangesentityRangesentityRanges')
     findRangesImmutable(
       this.getCharacterList(),
       haveEqualEntity,

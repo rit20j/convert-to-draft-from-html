@@ -121,6 +121,7 @@ class ContentState extends Record(defaultRecord) {
   }
 
   createEntity(type, mutability, data) {
+    console.log('creat===============222222========eEntity', type)
     DraftEntity.__create(type, mutability, data);
     return this;
   }

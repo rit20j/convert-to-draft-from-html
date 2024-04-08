@@ -1,14 +1,14 @@
-// import { DraftEntity } from './utils/index.js';
 const DraftEntity = require("./utils/DraftEntity.js");
-
-// const DraftEntity  = require('./utils/DraftEntity.js')
 
 const getEntityId = (node) => {
   let entityId = undefined;
+
   if (
     node
   ) {
     const entityConfig = {};
+
+    console.log('node----------------', node.getAttribute)
     if (node.dataset && node.dataset.mention !== undefined) {
       entityConfig.url = node.href;
       entityConfig.text = node.innerHTML;
@@ -18,7 +18,8 @@ const getEntityId = (node) => {
         'IMMUTABLE',
         entityConfig,
       );
-    } else {
+    } else if(node && node.getAttribute && node.getAttribute('href')){
+
       entityConfig.url = node.getAttribute ? node.getAttribute('href') || node.href : node.href;
       entityConfig.title = node.innerHTML;
       entityConfig.targetOption = node.target;
@@ -27,7 +28,18 @@ const getEntityId = (node) => {
         'MUTABLE',
         entityConfig,
       );
+    } else {
+      console.log('entityConfig0000', entityConfig)
+      // entityConfig.url = "";
+      // entityConfig.text = "";
+      // entityConfig.value = "";
+      // entityId = DraftEntity.__create(
+      //   'MENTION',
+      //   'IMMUTABLE',
+      //   entityConfig,
+      // );
     }
+    
   }
   return entityId;
 }
